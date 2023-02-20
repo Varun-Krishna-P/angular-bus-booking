@@ -1,0 +1,74 @@
+<div class="card">
+    <div class="card-header">
+        Search Bus
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">Search for bus</h5>
+        <div class="card-text">
+            <form class="row g-3" [formGroup]="busSearchForm" (ngSubmit)="onSubmit()" autocomplete="off">
+                <div class="col-md-6">
+                    <label for="leaving_from" class="form-label">Leaving From</label>
+                    <input type="text" class="form-control" id="leaving_from" formControlName="from"
+                        [ngClass]="{ 'is-invalid': submitted && f['from'].errors }">
+                    <div *ngIf="submitted && f['from'].errors" class="invalid-feedback">
+                        <div *ngIf="f['from'].errors['required']">From is required</div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="leaving_to" class="form-label">Leaving To</label>
+                    <input type="text" class="form-control" id="leaving_to" formControlName="to"
+                    [ngClass]="{ 'is-invalid': submitted && f['to'].errors }">
+                    <div *ngIf="submitted && f['to'].errors" class="invalid-feedback">
+                        <div *ngIf="f['to'].errors['required']">To is required</div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <label for="departing_on" class="form-label">Address</label>
+                    <input type="time" class="form-control" id="departing_on" placeholder="hh:mm:ss">
+                </div>
+                <div class="col-6">
+                    <button type="submit" class="btn btn-primary" [disabled]="!busSearchForm.valid">Search</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="container pt-3" *ngIf="submitted">
+    <div class="row">
+        <div class="col-12">
+            <table class="table table-dark table-striped">
+                <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Depot</th>
+                      <th scope="col">Route NO</th>
+                      <th scope="col">From</th>
+                      <th scope="col">To</th>
+                      <th scope="col">Route Length</th>
+                      <th scope="col">Type</th>
+                      <th scope="col">No of Service</th>
+                      <th scope="col">Departure Timings</th>
+                      <th scope="col">View Details</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let bus of buses">
+                        <td>{{bus.id}}</td>
+                        <td>{{bus.depot}}</td>
+                        <td>{{bus.route_no}}</td>
+                        <td>{{bus.from}}</td>
+                        <td>{{bus.to}}</td>
+                        <td>{{bus.route_length}}</td>
+                        <td>{{bus.type}}</td>
+                        <td>{{bus.no_of_service}}</td>
+                        <td>{{bus.departure_timings}}</td>
+                        <td>
+                            <button class="btn btn-outline-primary"[routerLink]="['book-bus-ticket', bus.id]">View</button>
+                        </td>
+                    </tr>
+                  </tbody>
+            </table>
+        </div>
+    </div>
+</div>

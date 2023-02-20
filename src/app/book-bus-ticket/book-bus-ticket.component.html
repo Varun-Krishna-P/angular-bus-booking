@@ -1,0 +1,131 @@
+<div class="container">
+    <div class="row">
+        <div class="col-7">
+            <div>A</div>
+            <div class="grid" style="--bs-columns: 12; --bs-gap: 1rem;">
+                <div class="g-col-2">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" (click)="addTicket('1', 'A')">
+                    </div>
+                </div>
+                <div class="g-col-2">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" (click)="addTicket('2', 'A')">
+                    </div>
+                </div>
+                <div class="g-col-2">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" (click)="addTicket('3', 'A')">
+                    </div>
+                </div>
+                <div class="g-col-2">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" (click)="addTicket('4', 'A')">
+                    </div>
+                </div>
+                <div class="g-col-2">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" (click)="addTicket('5', 'A')">
+                    </div>
+                </div>
+
+                <div class="g-col-2">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" (click)="addTicket('6', 'A')">
+                    </div>
+                </div>
+            </div>
+            <div>B</div>
+            <div class="grid" style="--bs-columns: 12; --bs-gap: 1rem;">
+                <div class="g-col-2">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" (click)="addTicket('1', 'B')">
+                    </div>
+                </div>
+                <div class="g-col-2">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" (click)="addTicket('2', 'B')">
+                    </div>
+                </div>
+                <div class="g-col-2">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" (click)="addTicket('3', 'B')">
+                    </div>
+                </div>
+                <div class="g-col-2">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" (click)="addTicket('4', 'B')">
+                    </div>
+                </div>
+                <div class="g-col-2">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" (click)="addTicket('5', 'B')">
+                    </div>
+                </div>
+                <div class="g-col-2">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" (click)="addTicket('6', 'B')">
+                    </div>
+                </div>
+            </div>
+            <div>C</div>
+            <div class="grid" style="--bs-columns: 12; --bs-gap: 1rem;">
+                <div class="g-col-2">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" (click)="addTicket('1', 'C')">
+                    </div>
+                </div>
+                <div class="g-col-2">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" (click)="addTicket('2', 'C')">
+                    </div>
+                </div>
+                <div class="g-col-2">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" (click)="addTicket('3', 'C')">
+                    </div>
+                </div>
+                <div class="g-col-2">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" (click)="addTicket('4', 'C')">
+                    </div>
+                </div>
+                <div class="g-col-2">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" (click)="addTicket('5', 'B')">
+                    </div>
+                </div>
+                <div class="g-col-2">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" (click)="addTicket('6', 'C')">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    
+        <div class="col-5">
+            <div class="card">
+                <h5 class="card-header">Selected Ticket</h5>
+                <div class="card-body">
+                <div class="card-text">
+                    <div class="row">
+                        <div class="col-4">Row</div>
+                        <div class="col-5">Seat No</div>
+                        <div class="col-3">Price</div>
+                    </div>
+                    <div class="container" *ngFor="let ticket of selectedTicket">
+                        <div class="row">
+                            <div class="col-4">{{ticket.row}}</div>
+                            <div class="col-5">{{ticket.seatNo}}</div>
+                            <div class="col-3">{{ticket.price}}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-3 mb-2 bg-light text-primary fw-bold">Total: {{total}}</div>
+                <button class="btn btn-outline-primary" type="button" (click)="onConfirmTicket()">Confirm Booking!</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
