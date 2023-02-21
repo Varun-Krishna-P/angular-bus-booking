@@ -1,1 +1,81 @@
-<p>print-bus-ticket works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <h4 class="card-title text-center">Online booking</h4>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="grid bg-warning text-dark">
+                                <div class="g-col-6">from to </div>
+                                <div class="g-col-6">{{bookingDate}}</div>
+                              </div>
+                        </div>
+                    </div>
+                    <div class="row pt-3">
+                        <div class="col-12">
+                            <div class="grid border p-3">
+                                <div class="g-col-3">
+                                    <p class="fw-bold">Passenger Details</p>
+                                </div>
+                                <div class="g-col-3">
+                                    <p class="fw-bold">Ticket ID</p>
+                                </div>
+                                <div class="g-col-3">
+                                    <p class="fw-bold">Seat No</p>
+                                </div>
+                                <div class="g-col-3">
+                                    <p class="fw-bold">Total Fair</p>
+                                </div>
+                                <div class="g-col-3">
+                                    <p class="fw-bold">{{userDetail.name}}</p>
+                                    <p>{{userDetail.email}}</p>
+                                    <p>{{userDetail.mobile}}</p>
+                                </div>
+                                <div class="g-col-3">
+                                    <p>{{ticketID}}</p>
+                                </div>
+                                <div class="g-col-3">
+                                    <p>{{selectedSeats}}</p>
+                                </div>
+                                <div class="g-col-3">
+                                    <p>{{totalFare}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row pt-3">
+                        <div class="col-12">
+                            <div class="grid border p-3">
+                                <div class="g-col-4">
+                                    <p class="fw-bold">Bus Details</p>
+                                </div>
+                                <div class="g-col-4">
+                                    <p class="fw-bold">Reporting Time</p>
+                                </div>
+                                <div class="g-col-4">
+                                    <p class="fw-bold">Departure Time</p>
+                                </div>
+                                <div class="g-col-4">
+                                    <p class="fw-bold">{{busTicket[0].from.toUpperCase()}} - {{busTicket[0].to.toUpperCase()}} express</p>
+                                    <p>Coach type: {{busTicket[0].type}}</p>
+                                </div>
+                                <div class="g-col-4">
+                                    <p>30 minutes before departure</p>
+                                </div>
+                                <div class="g-col-4">
+                                    <p>10:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row pt-3">
+                        <div class="col-12">
+                            <p class="text-center text-danger">**Please bring this copy to the ticket counter to collect your ticket</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

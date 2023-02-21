@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { StorageService } from '../services/storage.service';
 
 @Component({
@@ -15,7 +16,7 @@ export class PassengerDetailsComponent {
     email: new FormControl('', [Validators.required, Validators.email])
   })
   
-  constructor(private storageService: StorageService){}
+  constructor(private storageService: StorageService, private router: Router){}
 
   get f() { return this.passengerDetailsForm.controls; }
 
@@ -23,5 +24,6 @@ export class PassengerDetailsComponent {
     this.submitted = true;
     const {name, mobile, email } = this.passengerDetailsForm.value
     this.storageService.saveSession('passenger-details', {name: name, mobile: mobile, email: email})
+    this.router.navigate(['print-bus-ticket'])
   }
 }

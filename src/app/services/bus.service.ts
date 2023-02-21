@@ -10,6 +10,6 @@ export class BusService {
   constructor() { }
 
   filterBuses(from: any, to: any): Bus[] {
-    return BUSES.filter(bus => bus.from.toUpperCase() == from.toUpperCase() && bus.to.toUpperCase() === to.toUpperCase())
+    return BUSES.filter(bus => bus.from.toUpperCase() === from.toUpperCase() && bus.to.toUpperCase() === to.toUpperCase())
   }
 }
